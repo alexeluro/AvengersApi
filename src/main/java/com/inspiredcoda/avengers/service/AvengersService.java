@@ -46,6 +46,20 @@ public class AvengersService {
         return HEROES;
     }
 
+    public List<Hero> recruitNewAvenger(Hero hero){
+        HEROES.add(hero);
+        return HEROES;
+    }
+
+    public List<Hero> deleteHero(Hero hero){
+        Hero mHero = HEROES.stream()
+                        .filter(hero1 -> hero1.getId().equals(hero.getId()))
+                        .findFirst()
+                        .orElseThrow(() -> new RuntimeException("No Hero Found"));
+        HEROES.remove(mHero);
+        return HEROES;
+    }
+
 
 
 
