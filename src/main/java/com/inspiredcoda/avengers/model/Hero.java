@@ -10,17 +10,19 @@ public class Hero {
     private String alias;
     private String picUrl;
     private boolean canFly;
+    private String description;
 
     public Hero() {
     }
 
-    public Hero(String codeName, Gender gender, String alias, String picUrl, boolean canFly) {
+    public Hero(String codeName, Gender gender, String alias, String picUrl, boolean canFly, String description) {
         this.id = UUID.randomUUID();
         this.codeName = codeName;
         this.gender = gender;
         this.alias = alias;
         this.picUrl = picUrl;
         this.canFly = canFly;
+        this.description = description;
     }
 
     public UUID getId(){
@@ -46,6 +48,11 @@ public class Hero {
     public String getPicUrl() {
         return picUrl;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
 
 }
 
